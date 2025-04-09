@@ -1,7 +1,7 @@
 import { DataBaseManager } from "./DataBaseManager.js";
 import { ToDoModel } from "./ToDoModel.js";
 
-const db = new DataBaseManager("http://localhost:3000");
+const db = new DataBaseManager("https://jsonserver-tasks.vercel.app/");
 
 export class ToDoManager {
 	async getAllTodo() {
