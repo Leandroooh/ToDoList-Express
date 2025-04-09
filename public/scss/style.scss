@@ -1,0 +1,224 @@
+@use './index' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    padding: 0;
+}
+
+body {
+    @include flex(column, center, center);
+    width: 100%;
+    height: 100vh;
+
+    color: $gray-100;
+    background: $gray-700;
+}
+
+.container-splashscreen {
+    @include flex(column, center, center);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.image-container {
+    padding-bottom: 32px;
+
+    img {
+        width: 360px;
+    }
+}
+
+.text-container {
+    @include flex();
+
+    h3 {
+        @include font-style(300, 2.4rem);
+        width: 45%;
+        padding-bottom: 32px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+#start-btn {
+    @include font-style(500, 2.4rem);
+    padding: 16px 52px;
+
+    color: $gray-200;
+    background: $dark-blue;
+    border: none;
+    border-radius: 12px;
+    transition: background ease-in-out 0.3s;
+
+    &:hover {
+        background: $dark-purple;
+    }
+}
+
+// Cabeçalho
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: $gray-600;
+    border-radius: 12px;
+
+    .header-image img {
+        max-height: 50px;
+    }
+
+    .form-container {
+        form {
+            display: flex;
+            gap: 10px;
+
+            input {
+                padding: 8px;
+                border-radius: 12px;
+                border: none;
+                outline: none;
+            }
+
+            button {
+                padding: 8px 16px;
+                background-color: $light-blue;
+                color: white;
+                border: none;
+                border-radius: 12px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: lighten($dark-blue, 10%);
+                }
+            }
+        }
+    }
+}
+
+main.container {
+    min-width: 30%;
+    max-width: 35%;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        max-width: 80%;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 95%;
+    }
+}
+
+.task-container {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    background: $gray-600;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 10px;
+    }
+
+    .top-settings {
+        @include flex(row, initial, space-between);
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+
+        .task-count span,
+        .completed-tasks span {
+            padding: 7px;
+            margin-left: 3px;
+            border-radius: 50%;
+            background: $gray-400;
+            font-size: 14px;
+
+            @media (max-width: 480px) {
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
+    }
+
+    .tasks-container {
+        @include flex(column, initial, space-between);
+        gap: 15px;
+
+        .task-item {
+            @include flex(row, center, initial);
+            text-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            background-color: $gray-500;
+            border-radius: 12px;
+            transition: 0.3s;
+            flex-wrap: wrap;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input[type="checkbox"] {
+                transform: scale(1.2);
+
+                @media (max-width: 480px) {
+                    transform: scale(1);
+                }
+            }
+
+            h1 {
+                flex: 1;
+                font-size: 16px;
+                font-weight: normal;
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 12px;
+                }
+            }
+
+            button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+
+                img {
+                    width: 20px;
+                    transition: 0.2s;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+
+                    @media (max-width: 480px) {
+                        width: 15px;
+                    }
+                }
+            }
+
+            &.completed {
+                text-decoration: line-through;
+            }
+        }
+    }
+}

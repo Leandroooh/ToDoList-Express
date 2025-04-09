@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks | Lista </title>
+    <link rel="shortcut icon" href="/assets/images/rocket.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="/assets/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header-container">
+
+            <div class="header-image">
+                <img src="/assets/images/Logo-Todo.svg" alt="ToDo Logo">
+            </div>
+
+            <div class="form-container">
+
+                <form action="/tasks/create" method="POST">
+                    <input type="text" id="newTask" name="content" placeholder="Adicione uma nova tarefa">
+                    <button type="submit">Criar</button>
+                </form>
+
+            </div>
+
+        </header>
+
+        <section class="task-container">
+
+            <div class="top-settings">
+
+                <div class="task-count">
+                    <h3>Tarefas Criadas
+                        <span>
+                            <%= tasks.length %>
+                        </span>
+                    </h3>
+                </div>
+
+                <div class="completed-tasks">
+                    <h3>Concluídas <span>2 de 5</span></h3>
+                </div>
+
+            </div>
+
+            <div class="tasks-container">
+
+                <% if (tasks.length <=0) { %>
+                    <p>Não há Tasks para serem exibidas</p>
+                    <% } else { %>
+
+                        <% tasks.forEach(task=> { %>
+                            <div class="task-item <%= task.status === 'Concluído' ? 'completed' : '' %>">
+                                <form action="/tasks/complete/<%=task.id%>" method="post">
+                                    <button type="submit">
+                                        <img src="/assets/images/checked.svg" alt="delete icon">
+                                    </button>
+                                </form>
+                                <h1>
+                                    <%= task.content %>
+                                </h1>
+                                <form action="/tasks/delete/<%=task.id%>" method="post">
+                                    <button type="submit">
+                                        <img src="/assets/images/trash.svg" alt="delete icon">
+                                    </button>
+                                </form>
+                            </div>
+                            <% }) %>
+
+                                <% } %>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

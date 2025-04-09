@@ -1,0 +1,230 @@
+/* Main - Colors */
+/* Gray - Tons */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  color: #F2F2F2;
+  background: #0D0D0D;
+}
+
+.container-splashscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.image-container {
+  padding-bottom: 32px;
+}
+.image-container img {
+  width: 360px;
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.text-container h3 {
+  font: 300 2.4rem/1.5 "Inter", sans-serif;
+  width: 45%;
+  padding-bottom: 32px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#start-btn {
+  font: 500 2.4rem/1.5 "Inter", sans-serif;
+  padding: 16px 52px;
+  color: #D9D9D9;
+  background: #1E6F9F;
+  border: none;
+  border-radius: 12px;
+  transition: background ease-in-out 0.3s;
+}
+#start-btn:hover {
+  background: #5E60CE;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1A1A1A;
+  border-radius: 12px;
+}
+.header-container .header-image img {
+  max-height: 50px;
+}
+.header-container .form-container form {
+  display: flex;
+  gap: 10px;
+}
+.header-container .form-container form input {
+  padding: 8px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+.header-container .form-container form button {
+  padding: 8px 16px;
+  background-color: #4EA8DE;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header-container .form-container form button:hover {
+  background-color: #268dca;
+}
+
+main.container {
+  min-width: 30%;
+  max-width: 35%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  main.container {
+    max-width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  main.container {
+    max-width: 95%;
+  }
+}
+
+.task-container {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  background: #1A1A1A;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .task-container {
+    padding: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .task-container {
+    padding: 10px;
+  }
+}
+.task-container .top-settings {
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.task-container .top-settings .task-count span,
+.task-container .top-settings .completed-tasks span {
+  padding: 7px;
+  margin-left: 3px;
+  border-radius: 50%;
+  background: #333333;
+  font-size: 14px;
+}
+@media (max-width: 480px) {
+  .task-container .top-settings .task-count span,
+  .task-container .top-settings .completed-tasks span {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+.task-container .tasks-container {
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+}
+.task-container .tasks-container .task-item {
+  display: flex;
+  align-items: center;
+  justify-content: initial;
+  flex-direction: row;
+  text-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: #262626;
+  border-radius: 12px;
+  transition: 0.3s;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .task-container .tasks-container .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.task-container .tasks-container .task-item input[type=checkbox] {
+  transform: scale(1.2);
+}
+@media (max-width: 480px) {
+  .task-container .tasks-container .task-item input[type=checkbox] {
+    transform: scale(1);
+  }
+}
+.task-container .tasks-container .task-item h1 {
+  flex: 1;
+  font-size: 16px;
+  font-weight: normal;
+}
+@media (max-width: 768px) {
+  .task-container .tasks-container .task-item h1 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .task-container .tasks-container .task-item h1 {
+    font-size: 12px;
+  }
+}
+.task-container .tasks-container .task-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.task-container .tasks-container .task-item button img {
+  width: 20px;
+  transition: 0.2s;
+}
+.task-container .tasks-container .task-item button img:hover {
+  opacity: 0.7;
+}
+@media (max-width: 480px) {
+  .task-container .tasks-container .task-item button img {
+    width: 15px;
+  }
+}
+.task-container .tasks-container .task-item.completed {
+  text-decoration: line-through;
+}

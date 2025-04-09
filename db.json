@@ -1,0 +1,36 @@
+{
+  "tasks": [
+    {
+      "id": "c6f0",
+      "content": "Realizar 10 minutos de Cardio",
+      "status": "Concluído",
+      "date": "2025-04-09T13:14:38.900Z",
+      "updatedAt": "2025-04-09T13:15:04.445Z"
+    },
+    {
+      "id": "b4ca",
+      "content": "Tomar Café da Manhã",
+      "status": "Concluído",
+      "date": "2025-04-09T13:14:42.910Z",
+      "updatedAt": "2025-04-09T13:14:48.488Z"
+    },
+    {
+      "id": "0898",
+      "content": "Finalizar o Projeto de ToDo List",
+      "status": "Pendente",
+      "date": "2025-04-09T13:15:01.501Z"
+    },
+    {
+      "id": "de58",
+      "content": "Implementar melhorias no ToDoList",
+      "status": "Pendente",
+      "date": "2025-04-09T13:15:13.036Z"
+    },
+    {
+      "id": "3393",
+      "content": "Almoçar",
+      "status": "Pendente",
+      "date": "2025-04-09T13:15:22.697Z"
+    }
+  ]
+}
